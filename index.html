@@ -11,8 +11,11 @@
         crossorigin="anonymous">
 
     <style>
-        #lugares {
+        .categoria {
             margin-top: 1em;
+        }
+        .btn-add {
+            float: right;
         }
     </style>
 </head>
@@ -26,7 +29,21 @@
     <div class="container">
         <div id="lugares" class="row"></div>
     </div>
-    <script src="index.js?4"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBLc0hFaT_Ftac8NdrMik93KX5axgMubQo",
+            authDomain: "places-to-go-bauru.firebaseapp.com",
+            databaseURL: "https://places-to-go-bauru.firebaseio.com",
+            projectId: "places-to-go-bauru",
+            storageBucket: "places-to-go-bauru.appspot.com",
+            messagingSenderId: "641355267362"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="index.js?5"></script>
 </body>
 
 </html>
