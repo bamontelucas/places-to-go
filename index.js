@@ -3,15 +3,17 @@ const load = async() => {
     const json = await response.json();
     
     const html = json.map(categoria => `
-        <li>
-            ${categoria.categoria}
-            <ul>
-                ${categoria.lugares.map(lugar => `<li>${lugar}</li>`)}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">${categoria.categoria}</h5>
+            </div>  
+            <ul class="list-group list-group-flush">
+                ${categoria.lugares.map(lugar => `<li class="list-group-item">${lugar}</li>`).join('')}
             </ul>
-        </li>
-    `);
+        </div>
+    `).join('');
     
-    document.querySelector('#places').insertAdjacentHTML('beforeend', html);
+    document.querySelector('#lugares').insertAdjacentHTML('beforeend', html);
 }
 
 load();
